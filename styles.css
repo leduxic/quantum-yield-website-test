@@ -4,7 +4,7 @@ body {
   padding: 0;
   background-color: #000000; /* solid black background */
   color: #D3D3D3; /* light gray text for readability */
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inconsolata', monospace; /* changed from Inter to Inconsolata */
 }
 
 a {
@@ -25,7 +25,7 @@ main.container {
 }
 
 .ascii-logo {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace; /* keep Roboto Mono for ASCII logo */
   color: #FFFFFF;
   white-space: pre-wrap;
   margin-bottom: 24px;
