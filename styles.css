@@ -31,10 +31,17 @@ main.container {
   margin-bottom: 24px;
 }
 
+.content {
+  text-align: left;       /* NEW: left-align content */
+  max-width: 600px;       /* NEW: optional for better readability */
+  margin: 0 auto;         /* NEW: center the block itself */
+  padding-left: 16px;     /* NEW: slight indent from the left */
+}
+
 .content p {
-  margin: 8px 0;
+  margin: 16px 0;         /* UPDATED: more vertical space between lines */
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;       /* UPDATED: better line height for readability */
 }
 
 hr {
