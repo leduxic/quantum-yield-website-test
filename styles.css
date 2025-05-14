@@ -1,114 +1,73 @@
-<!-- styles.css -->
-/* Save this as styles.css */
+/* styles.css */
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
-  color: #D3D3D3;
+  background-color: #000000; /* solid black background */
+  color: #D3D3D3; /* light gray text for readability */
   font-family: 'Inter', sans-serif;
-}
-
-.container {
-  max-width: 90vw;
-  padding: 32px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.ascii-logo {
-  font-family: 'Roboto Mono', monospace;
-  color: #F7931A;
-  font-size: 12px;
-  margin-bottom: 32px;
-  white-space: pre-wrap;
-}
-
-.content p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin: 12px 0;
-}
-
-.content hr {
-  border: 0;
-  border-top: 1px solid #333;
-  margin: 24px 0;
 }
 
 a {
   color: #F7931A;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   color: #FFA940;
 }
 
+main.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+  text-align: center;
+}
+
+.ascii-logo {
+  font-family: 'Roboto Mono', monospace;
+  color: #FFFFFF;
+  white-space: pre-wrap;
+  margin-bottom: 24px;
+}
+
+.content p {
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 24px 0;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
-  border-top: 1px solid #333;
+  padding: 24px 32px;
   font-size: 14px;
-  flex-wrap: wrap;
-  gap: 12px;
+  color: #D3D3D3;
 }
 
 .footer-left a,
 .footer-right a {
-  margin-right: 16px;
+  margin: 0 8px;
 }
 
-.footer-center {
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
   text-align: center;
-  flex: 1 1 100%;
-  margin-top: 8px;
 }
 
-.page {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 32px;
-  background-color: #1A1A1A;
-  color: #D3D3D3;
-  font-size: 16px;
-  line-height: 1.6;
-  position: relative;
+.footer-left {
+  text-align: left;
 }
 
-.page h1 {
-  font-size: 32px;
-  margin-bottom: 24px;
+.footer-right {
+  text-align: right;
 }
-
-.close-button {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  font-size: 24px;
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s;
-}
-
-.close-button:hover {
-  color: #F7931A;
-}
-
-@media (max-width: 768px) {
-  .ascii-logo {
-    font-size: 9px;
-  }
-
-  .page h1 {
-    font-size: 24px;
-  }
-
-  .content p {
-    font-size: 16px;
-  }
-}
-
-</xaiArtifact>
