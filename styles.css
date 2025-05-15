@@ -16,9 +16,9 @@ body {
     repeating-linear-gradient(
       to bottom,
       #1d2418 0px,
-      #1d2418 2px,
-      #293222 2px,
-      #293222 4px
+      #1d2418 3px,
+      #293222 3px,
+      #293222 6px
     ),
     linear-gradient(white 1px, transparent 1px),          /* white horizontal grid lines */
     linear-gradient(to right, white 1px, transparent 1px); /* white vertical grid lines */
