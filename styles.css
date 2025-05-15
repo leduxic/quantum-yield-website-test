@@ -108,8 +108,14 @@ footer {
   }
 }
 
+/* Replace previous 480px media query with this */
 @media (max-width: 480px) {
   .ascii-logo {
-    font-size: 8px;
+    font-size: 6px;          /* smaller font size for better fit */
+    white-space: normal;     /* allow wrapping instead of pre */
+    overflow-x: visible;     /* disable horizontal scroll */
+    max-width: 100%;         /* constrain width to container */
+    word-wrap: break-word;   /* break long lines to avoid overflow */
+    padding-bottom: 10px;
   }
 }
