@@ -1,4 +1,10 @@
 /* styles.css */
+
+/* Prevent horizontal scroll globally */
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -39,9 +45,11 @@ main.container {
   text-align: center;
   margin-bottom: 20px;
   color: #f7931a; /* Bitcoin orange? Or your brand color */
-  overflow-x: auto;
+  overflow-x: visible; /* changed from auto to visible */
   display: block;
   padding-bottom: 10px;
+  max-width: 100%;      /* added to constrain width */
+  box-sizing: border-box; /* to include padding in width */
 }
 
 .content {
@@ -108,7 +116,6 @@ footer {
   }
 }
 
-/* Replace previous 480px media query with this */
 @media (max-width: 480px) {
   .ascii-logo {
     font-size: 6px;          /* smaller font size for better fit */
