@@ -25,10 +25,13 @@ main.container {
 }
 
 .ascii-logo {
-  font-family: 'Roboto Mono', monospace; /* keep Roboto Mono for ASCII logo */
-  color: #FFFFFF;
-  white-space: pre-wrap;
-  margin-bottom: 24px;
+  font-family: 'Roboto Mono', 'Inconsolata', monospace;
+  font-size: 10px; /* adjust size as needed */
+  line-height: 1.1;
+  white-space: pre;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f7931a; /* Bitcoin orange? Or your brand color */
 }
 
 .content {
