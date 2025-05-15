@@ -39,9 +39,9 @@ main.container {
 }
 
 .content p {
-  margin: 16px 0;         /* UPDATED: more vertical space between lines */
-  font-size: 16px;
-  line-height: 1.8;       /* UPDATED: better line height for readability */
+  margin: 12px 0;
+  font-size: 20px; /* increased from 16px */
+  line-height: 1.8; /* optional, for better spacing */
 }
 
 hr {
