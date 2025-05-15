@@ -2,59 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quantum Yield Partners Inc.</title>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto+Mono&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto+Mono&display=swap" rel="stylesheet" />
 
-  <style>
-    .terminal-line {
-      white-space: pre;
-      font-family: 'Inconsolata', monospace;
-      color: #0f0;
-      overflow: hidden;
-      border-right: 2px solid transparent;
-      animation: typing 2s steps(40, end) forwards;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    .blinking-cursor {
-      display: inline-block;
-      width: 1ch;
-      animation: blink 1s steps(2, start) infinite;
-      color: #0f0;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
-    }
-
-    .boot-bar {
-      font-family: 'Inconsolata', monospace;
-      color: #0f0;
-      white-space: pre;
-    }
-
-    .boot-bar span {
-      color: #0f0;
-    }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="container">
-    <!-- Optional animated ASCII logo via JS -->
-    <pre id="boot-sequence" class="ascii-logo"></pre>
-
-    <!-- Static ASCII logo -->
     <pre class="ascii-logo" data-text="  
   /₿₿₿₿₿₿  /₿₿   /₿₿  /₿₿₿₿₿₿₿  /₿₿   /₿₿ /₿₿₿₿₿₿₿₿ /₿₿   /₿₿ /₿₿      /₿₿       /₿₿     /₿₿ /₿₿₿₿₿₿ /₿₿₿₿₿₿₿₿ /₿₿       /₿₿₿₿₿₿₿       
  /₿₿__  ₿₿| ₿₿  | ₿₿ /₿₿__  ₿₿| ₿₿₿ | ₿₿|__  ₿₿__/| ₿₿  | ₿₿| ₿₿₿    /₿₿₿      |  ₿₿   /₿₿/|_  ₿₿ /| ₿₿_____/| ₿₿      | ₿₿__  ₿₿      
@@ -67,13 +27,10 @@
       \__/">
     </pre>
 
-    <div class="content" id="terminal">
-      <!-- Typing animation injected here -->
-    </div>
+    <div class="content" id="terminal"></div>
   </main>
 
   <footer>
-    <div id="boot-sequence"></div>
     <div class="footer-left">
       <a href="privacy.html">PRIVACY</a>
       <a href="legal.html">LEGAL</a>
@@ -97,8 +54,6 @@
       "boot"
     ];
 
-    const terminalDiv = document.getElementById('terminal');
-
     const bootFrames = [
       "[█░░░░░░░░░░░] 7%",
       "[██░░░░░░░░░░] 14%",
@@ -114,6 +69,8 @@
       "[████████████] 100%",
       "> Status: █ LIVE"
     ];
+
+    const terminalDiv = document.getElementById('terminal');
 
     async function typeLine(line, delay = 50) {
       return new Promise(resolve => {
@@ -152,7 +109,6 @@
         }
       }
 
-      // Blinking cursor
       const cursor = document.createElement('p');
       cursor.innerHTML = '&gt;<span class="blinking-cursor">_</span>';
       terminalDiv.appendChild(cursor);
