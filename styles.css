@@ -5,12 +5,21 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Two-tone background with white grid lines */
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000; /* solid black background */
-  color: #D3D3D3; /* light gray text for readability */
-  font-family: 'Inconsolata', monospace; /* changed from Inter to Inconsolata */
+  color: #D3D3D3;
+  font-family: 'Inconsolata', monospace;
+
+  background-image: 
+    linear-gradient(to right, #1d2418 50%, #293222 50%), /* split colors */
+    linear-gradient(white 1px, transparent 1px),          /* horizontal lines */
+    linear-gradient(to right, white 1px, transparent 1px); /* vertical lines */
+
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+  background-position: top left, top left, top left;
+  background-repeat: no-repeat, repeat, repeat;
 }
 
 a {
@@ -39,30 +48,32 @@ main.container {
 
 .ascii-logo {
   font-family: 'Roboto Mono', 'Inconsolata', monospace;
-  font-size: 10px; /* adjust size as needed */
+  font-size: 10px;
   line-height: 1.1;
   white-space: pre;
   text-align: center;
   margin-bottom: 20px;
-  color: #f7931a; /* Bitcoin orange? Or your brand color */
-  overflow-x: visible; /* changed from auto to visible */
+  color: #f7931a;
+  overflow-x: visible;
   display: block;
   padding-bottom: 10px;
-  max-width: 100%;      /* added to constrain width */
-  box-sizing: border-box; /* to include padding in width */
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: transparent; /* Ensure grid is visible */
 }
 
 .content {
-  text-align: left;       /* left-align content */
-  max-width: 600px;       /* optional for better readability */
-  margin: 0 auto;         /* center the block itself */
-  padding-left: 16px;     /* slight indent from the left */
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 16px;
+  background-color: transparent; /* Ensure grid is visible */
 }
 
 .content p {
   margin: 12px 0;
-  font-size: 18px; /* increased from 16px */
-  line-height: 1.8; /* optional, for better spacing */
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 hr {
@@ -118,11 +129,11 @@ footer {
 
 @media (max-width: 480px) {
   .ascii-logo {
-    font-size: 6px;          /* smaller font size for better fit */
-    white-space: normal;     /* allow wrapping instead of pre */
-    overflow-x: visible;     /* disable horizontal scroll */
-    max-width: 100%;         /* constrain width to container */
-    word-wrap: break-word;   /* break long lines to avoid overflow */
+    font-size: 6px;
+    white-space: normal;
+    overflow-x: visible;
+    max-width: 100%;
+    word-wrap: break-word;
     padding-bottom: 10px;
   }
 }
