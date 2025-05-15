@@ -206,6 +206,23 @@ footer {
   text-align: right;
 }
 
+/* Boot sequence animation */
+@keyframes bootingAnimation {
+  0%   { content: "Booting... [░░░░░░░░░░░░] 1%"; }
+  10%  { content: "Booting... [█░░░░░░░░░░░░] 7%"; }
+  20%  { content: "Booting... [██░░░░░░░░░░░] 14%"; }
+  30%  { content: "Booting... [███░░░░░░░░░░] 21%"; }
+  100% { content: "Booting... [███░░░░░░░░░░] 21%"; } /* Freeze here */
+}
+
+#boot-sequence::before {
+  content: "Booting... [░░░░░░░░░░░░] 1%";
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  animation: bootingAnimation 4s steps(3) forwards;
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
   footer {
