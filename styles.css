@@ -3,60 +3,66 @@
 /* Prevent horizontal scroll globally */
 html, body {
   overflow-x: hidden;
-  width: 100%; /* ensure body doesn't exceed viewport */
 }
 
 body {
   margin: 0;
   padding: 0;
   background-color: #000000; /* solid black background */
-  color: #D3D3D3; /* light .ascii-logo {
-    font-family: 'Roboto Mono', 'Inconsolata', monospace;
-    font-size: 10px;
-    line-height: 1.2;
-    white-space: pre;
-    text-align: center;
-    margin: 20px auto;
-    color: #F7931A;
-    display: block;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
+  color: #D3D3D3; /* light gray text for readability */
+  font-family: 'Inconsolata', monospace; /* changed from Inter to Inconsolata */
 }
 
-/* Fix logo on mobile */
-@media (max-width: 480px) {
-  .ascii-logo {
-    font-size: 8px;
-    white-space: pre;
-    max-width: 90vw;
-    transform: scale(0.9);
-    transform-origin: center;
-    overflow: hidden;
-    padding: 10px 5px;
-    line-height: 1.1;
-  }
+a {
+  color: #F7931A;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Extra scaling for very small screens */
-@media (max-width: 360px) {
-  .ascii-logo {
-    font-size: 7px;
-    transform: scale(0.8);
-  }
+a:hover,
+a:focus {
+  color: #FFA940;
+  outline: none;
+}
+
+a:focus {
+  outline: 2px solid #FFA940;
+  outline-offset: 2px;
+}
+
+main.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+  text-align: center;
+}
+
+.ascii-logo {
+  font-family: 'Roboto Mono', 'Inconsolata', monospace;
+  font-size: 10px; /* adjust size as needed */
+  line-height: 1.1;
+  white-space: pre;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f7931a; /* Bitcoin orange? Or your brand color */
+  overflow-x: visible; /* changed from auto to visible */
+  display: block;
+  padding-bottom: 10px;
+  max-width: 100%;      /* added to constrain width */
+  box-sizing: border-box; /* to include padding in width */
 }
 
 .content {
-  text-align: left;
-  max-width: 600px;
-  margin: 0 auto;
-  padding-left: 16px;
+  text-align: left;       /* left-align content */
+  max-width: 600px;       /* optional for better readability */
+  margin: 0 auto;         /* center the block itself */
+  padding-left: 16px;     /* slight indent from the left */
 }
 
 .content p {
   margin: 12px 0;
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 18px; /* increased from 16px */
+  line-height: 1.8; /* optional, for better spacing */
 }
 
 hr {
@@ -107,5 +113,16 @@ footer {
   .footer-right {
     flex: none;
     text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ascii-logo {
+    font-size: 6px;          /* smaller font size for better fit */
+    white-space: normal;     /* allow wrapping instead of pre */
+    overflow-x: visible;     /* disable horizontal scroll */
+    max-width: 100%;         /* constrain width to container */
+    word-wrap: break-word;   /* break long lines to avoid overflow */
+    padding-bottom: 10px;
   }
 }
