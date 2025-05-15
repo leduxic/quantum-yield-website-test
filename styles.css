@@ -26,6 +26,9 @@ body {
   background-size: 100% 100%, 32px 32px, 32px 32px;
   background-repeat: no-repeat, repeat, repeat;
   background-position: top left, top left, top left;
+
+  /* Add subtle glitch animation */
+  animation: glitchShift 5s infinite ease-in-out, glitchColorShift 7s infinite ease-in-out;
 }
 
 a {
@@ -219,5 +222,40 @@ footer {
     max-width: 100%;
     word-wrap: break-word;
     padding-bottom: 10px;
+  }
+}
+
+/* Subtle background glitch animation */
+
+@keyframes glitchShift {
+  0%, 100% {
+    background-position: top left, 0 0, 0 0;
+  }
+  25% {
+    background-position: top left, 2px 0, -2px 0;
+  }
+  50% {
+    background-position: top left, -2px 0, 2px 0;
+  }
+  75% {
+    background-position: top left, 1px 0, -1px 0;
+  }
+}
+
+@keyframes glitchColorShift {
+  0%, 100% {
+    filter: none;
+  }
+  20% {
+    filter: drop-shadow(2px 0 red) drop-shadow(-2px 0 cyan);
+  }
+  40% {
+    filter: drop-shadow(-1px 0 red) drop-shadow(1px 0 cyan);
+  }
+  60% {
+    filter: drop-shadow(1px 0 red) drop-shadow(-1px 0 cyan);
+  }
+  80% {
+    filter: drop-shadow(0 0 red) drop-shadow(0 0 cyan);
   }
 }
