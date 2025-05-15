@@ -10,57 +10,39 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000; /* solid black background */
-  color: #D3D3D3; /* light gray text for readability */
-  font-family: 'Inconsolata', monospace;
-}
-
-a {
-  color: #F7931A;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover,
-a:focus {
-  color: #FFA940;
-  outline: none;
-}
-
-a:focus {
-  outline: 2px solid #FFA940;
-  outline-offset: 2px;
-}
-
-main.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 32px;
-  text-align: center;
-}
-
-.ascii-logo {
-  font-family: 'Roboto Mono', 'Inconsolata', monospace;
-  font-size: 10px;
-  line-height: 1.2;
-  white-space: pre;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #f7931a;
-  display: block;
-  padding-bottom: 10px;
-  overflow-x: auto;
-  max-width: 100%;
-  box-sizing: border-box;
+  color: #D3D3D3; /* light .ascii-logo {
+    font-family: 'Roboto Mono', 'Inconsolata', monospace;
+    font-size: 10px;
+    line-height: 1.2;
+    white-space: pre;
+    text-align: center;
+    margin: 20px auto;
+    color: #F7931A;
+    display: block;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 /* Fix logo on mobile */
 @media (max-width: 480px) {
   .ascii-logo {
+    font-size: 8px;
+    white-space: pre;
+    max-width: 90vw;
+    transform: scale(0.9);
+    transform-origin: center;
+    overflow: hidden;
+    padding: 10px 5px;
+    line-height: 1.1;
+  }
+}
+
+/* Extra scaling for very small screens */
+@media (max-width: 360px) {
+  .ascii-logo {
     font-size: 7px;
-    white-space: pre-wrap;        /* allow wrap but keep format */
-    overflow-x: hidden;           /* block scroll */
-    word-break: break-word;       /* break long lines */
-    padding: 0 10px 10px 10px;    /* breathing room on sides */
+    transform: scale(0.8);
   }
 }
 
