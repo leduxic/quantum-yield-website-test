@@ -40,7 +40,7 @@ main.container {
 
 .content p {
   margin: 12px 0;
-  font-size: 20px; /* increased from 16px */
+  font-size: 18px; /* increased from 16px */
   line-height: 1.8; /* optional, for better spacing */
 }
 
