@@ -13,8 +13,15 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
+a:hover,
+a:focus {
   color: #FFA940;
+  outline: none;
+}
+
+a:focus {
+  outline: 2px solid #FFA940;
+  outline-offset: 2px;
 }
 
 main.container {
@@ -32,13 +39,16 @@ main.container {
   text-align: center;
   margin-bottom: 20px;
   color: #f7931a; /* Bitcoin orange? Or your brand color */
+  overflow-x: auto;
+  display: block;
+  padding-bottom: 10px;
 }
 
 .content {
-  text-align: left;       /* NEW: left-align content */
-  max-width: 600px;       /* NEW: optional for better readability */
-  margin: 0 auto;         /* NEW: center the block itself */
-  padding-left: 16px;     /* NEW: slight indent from the left */
+  text-align: left;       /* left-align content */
+  max-width: 600px;       /* optional for better readability */
+  margin: 0 auto;         /* center the block itself */
+  padding-left: 16px;     /* slight indent from the left */
 }
 
 .content p {
@@ -80,4 +90,26 @@ footer {
 
 .footer-right {
   text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    flex: none;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ascii-logo {
+    font-size: 8px;
+  }
 }
