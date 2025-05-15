@@ -1,25 +1,56 @@
-<!-- Quantum Yield Website Files -->
-<xaiArtifact artifact_id="f5275d72-4031-42b1-9a4b-dce7aa13b3a1" title="Quantum Yield Website Files" contentType="text/html">
-
-<!-- index.html -->
-<!-- MAIN PAGE -->
-<!-- Save this as index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quantum Yield Partners Inc.</title>
 
-  <!-- Google Fonts preconnect and font link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .terminal-line {
+      white-space: pre;
+      font-family: 'Inconsolata', monospace;
+      color: #0f0;
+      overflow: hidden;
+      border-right: 2px solid transparent;
+      animation: typing 2s steps(40, end) forwards;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .blinking-cursor {
+      display: inline-block;
+      width: 1ch;
+      animation: blink 1s steps(2, start) infinite;
+      color: #0f0;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .boot-bar {
+      font-family: 'Inconsolata', monospace;
+      color: #0f0;
+      white-space: pre;
+    }
+
+    .boot-bar span {
+      color: #0f0;
+    }
+  </style>
 </head>
 <body>
-  <main class="container">
+    <main class="container">
     <pre class="ascii-logo" data-text="  
   /₿₿₿₿₿₿  /₿₿   /₿₿  /₿₿₿₿₿₿₿  /₿₿   /₿₿ /₿₿₿₿₿₿₿₿ /₿₿   /₿₿ /₿₿      /₿₿       /₿₿     /₿₿ /₿₿₿₿₿₿ /₿₿₿₿₿₿₿₿ /₿₿       /₿₿₿₿₿₿₿       
  /₿₿__  ₿₿| ₿₿  | ₿₿ /₿₿__  ₿₿| ₿₿₿ | ₿₿|__  ₿₿__/| ₿₿  | ₿₿| ₿₿₿    /₿₿₿      |  ₿₿   /₿₿/|_  ₿₿ /| ₿₿_____/| ₿₿      | ₿₿__  ₿₿      
@@ -43,17 +74,8 @@
       \__/                                                                                                                                                                                                                                                                                                                                                                                                           
 </pre>
 
-    <div class="content">
-      <p>QUANTUM YIELD PARTNERS INC. // BITCOIN TREASURY COMPANY</p>
-      <p>&gt; Initiating company...</p>
-      <p>&gt; Mission: Unleash Bitcoin_accumulation.exe to conquer global capital markets.</p>
-      <p>&gt; Run Bitcoin_accumulation.exe</p>
-      <p>&gt; Initializing X Account: <a href="https://x.com/quantumyield" target="_blank">@quantumyield</a></p>
-      <hr>
-      <p>&gt; Contact: <a href="mailto:hello@quantumyield.com">hello@quantumyield.com</a></p>
-      <p>Booting... [█████░░░░░░░░░░░] 21%</p>
-      <p>&gt; Status: █ LIVE</p>
-      <p>&gt;_</p>
+    <div class="content" id="terminal">
+      <!-- Typing animation injected here -->
     </div>
   </main>
 
@@ -69,5 +91,80 @@
       <a href="https://x.com" target="_blank">QUANTUM YIELD</a>
     </div>
   </footer>
+
+  <script>
+    const terminalLines = [
+      "QUANTUM YIELD PARTNERS INC. // BITCOIN TREASURY COMPANY",
+      "> Initiating company...",
+      "> Mission: Unleash Bitcoin_accumulation.exe to conquer global capital markets.",
+      "> Run Bitcoin_accumulation.exe",
+      "> Initializing X Account: @quantumyield",
+      "> Contact: hello@quantumyield.com",
+      "boot"
+    ];
+
+    const terminalDiv = document.getElementById('terminal');
+
+    const bootFrames = [
+      "[█░░░░░░░░░░░] 7%",
+      "[██░░░░░░░░░░] 14%",
+      "[███░░░░░░░░░] 21%",
+      "[████░░░░░░░░] 28%",
+      "[█████░░░░░░░] 35%",
+      "[██████░░░░░░] 42%",
+      "[███████░░░░░] 49%",
+      "[████████░░░░] 56%",
+      "[█████████░░░] 63%",
+      "[██████████░░] 70%",
+      "[███████████░] 84%",
+      "[████████████] 100%",
+      "> Status: █ LIVE"
+    ];
+
+    async function typeLine(line, delay = 50) {
+      return new Promise(resolve => {
+        const p = document.createElement('p');
+        p.className = 'terminal-line';
+        terminalDiv.appendChild(p);
+
+        let i = 0;
+        const interval = setInterval(() => {
+          p.textContent = line.slice(0, i + 1);
+          i++;
+          if (i >= line.length) {
+            clearInterval(interval);
+            resolve();
+          }
+        }, delay);
+      });
+    }
+
+    async function typeBootBar(frames, delay = 150) {
+      for (let frame of frames) {
+        const p = document.createElement('p');
+        p.className = 'boot-bar';
+        p.innerHTML = `Booting... <span>${frame}</span>`;
+        terminalDiv.appendChild(p);
+        await new Promise(r => setTimeout(r, delay));
+      }
+    }
+
+    async function startTyping() {
+      for (let line of terminalLines) {
+        if (line === "boot") {
+          await typeBootBar(bootFrames);
+        } else {
+          await typeLine(line);
+        }
+      }
+
+      // Blinking cursor
+      const cursor = document.createElement('p');
+      cursor.innerHTML = '&gt;<span class="blinking-cursor">_</span>';
+      terminalDiv.appendChild(cursor);
+    }
+
+    window.onload = startTyping;
+  </script>
 </body>
 </html>
